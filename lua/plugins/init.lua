@@ -25,13 +25,53 @@ return {
         "html-lsp",
         "css-lsp",
         "prettier",
-        "pyre",
+        "pyright",
         "black",
         "isort",
+        "rpgrep",
       },
     },
   },
 
+  {
+    "mfussenegger/nvim-dap",
+    config = function()
+      require "configs.dap"
+    end,
+  },
+
+  { "nvim-neotest/nvim-nio" },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    config = function()
+      require "configs.dap-ui"
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "rcarriga/nvim-dap-ui",
+    },
+    config = function()
+      require "configs.dap-python"
+    end,
+  },
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+    config = true,
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "configs.mason-dap"
+    end,
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
