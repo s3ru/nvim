@@ -25,9 +25,9 @@ return {
         "html-lsp",
         "css-lsp",
         "prettier",
-        "pyre", -- Added python language server here
+        "pyre",
         "black",
-        "isort"
+        "isort",
       },
     },
   },
@@ -41,7 +41,7 @@ return {
         "vimdoc",
         "html",
         "css",
-        "python"
+        "python",
       },
     },
   },
