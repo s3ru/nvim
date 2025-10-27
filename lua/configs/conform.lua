@@ -4,14 +4,14 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     python = { "isort", "black" },
-    --go = { "goimports", "gofmt" }
+    go = { "goimports", "gofmt" }
   }, --,
 
-  --format_on_save = {
+  format_on_save = {
   -- These options will be passed to conform.format()
-  --  timeout_ms = 500,
-  --  lsp_fallback = true,
-  --},
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
 }
 
 return options

@@ -29,16 +29,22 @@ return {
         "black",
         "isort",
         "rpgrep",
+        "gopls"
       },
     },
   },
-
-  {
+{
     "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    dependencies = {
+        "jay-babu/mason-nvim-dap.nvim",
+        "theHamsta/nvim-dap-virtual-text",
+    },
     config = function()
       require "configs.dap"
     end,
-  },
+},
+
 
   { "nvim-neotest/nvim-nio" },
 
@@ -58,6 +64,13 @@ return {
     },
     config = function()
       require "configs.dap-python"
+    end,
+  },
+  { "leoluz/nvim-dap-go",
+     ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      require "configs.dap-go"
     end,
   },
   {
