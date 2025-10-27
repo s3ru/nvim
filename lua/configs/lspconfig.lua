@@ -1,5 +1,5 @@
 require("nvchad.configs.lspconfig").defaults()
-vim.lsp.enable "pyright"
+--vim.lsp.enable "pyright"
 local servers = { "html", "cssls", "pyright" }
 vim.lsp.enable(servers)
 
